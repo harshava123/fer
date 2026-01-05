@@ -38,7 +38,7 @@ function Signup() {
     setLoading(true)
 
     try {
-      const { confirmPassword, ...dataToSend } = formData
+      const { confirmPassword: _confirmPassword, ...dataToSend } = formData
       const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
       const response = await fetch(`${API_URL}/api/auth/signup`, {
         method: 'POST',
@@ -59,7 +59,7 @@ function Signup() {
       } else {
         setError(data.message || 'Signup failed')
       }
-    } catch (err) {
+    } catch {
       setError('Network error. Please check if server is running.')
     } finally {
       setLoading(false)

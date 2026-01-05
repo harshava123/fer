@@ -44,7 +44,7 @@ function Login() {
       } else {
         setError(data.message || 'Login failed')
       }
-    } catch (err) {
+    } catch {
       setError('Network error. Please check if server is running.')
     } finally {
       setLoading(false)

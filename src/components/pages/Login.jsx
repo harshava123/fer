@@ -39,8 +39,7 @@ function Login() {
         // Store token in localStorage
         localStorage.setItem('token', data.token)
         localStorage.setItem('user', JSON.stringify(data.user))
-        navigate('/')
-        window.location.reload()
+        navigate('/dashboard')
       } else {
         setError(data.message || 'Login failed')
       }
